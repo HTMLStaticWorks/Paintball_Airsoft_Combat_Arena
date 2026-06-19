@@ -24,7 +24,7 @@
   --h1-size-desktop: 5rem;
   --h1-size-tablet: 4rem;
   --h1-size-mobile: 3rem;
-  --h1-size: clamp(3.5rem, 4vw + 1.5rem, 5rem);
+  --h1-size: clamp(2.2rem, 5vw + 1rem, 5rem);
   
   --h2-weight: 540;
   --h2-size: clamp(2.5rem, 3vw + 1rem, 3.5rem);
@@ -102,7 +102,7 @@ body {
 }
 
 /* Typography Classes */
-h1 { font-size: var(--h1-size); font-weight: var(--h1-weight); line-height: 1.1; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: -0.02em; }
+h1 { font-size: var(--h1-size); font-weight: var(--h1-weight); line-height: 1.1; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: -0.02em; overflow-wrap: break-word; word-wrap: break-word; }
 h2 { font-size: var(--h2-size); font-weight: var(--h2-weight); line-height: 1.2; margin-bottom: 1.5rem; text-transform: uppercase; }
 h3 { font-size: var(--h3-size); font-weight: var(--h3-weight); line-height: 1.3; margin-bottom: 1rem; }
 h4, h5, h6 { font-size: var(--h4-size); font-weight: var(--h4-weight); line-height: 1.4; margin-bottom: 1rem; }
@@ -174,19 +174,20 @@ img {
 
 .btn-secondary {
   background-color: transparent;
-  color: var(--text-primary);
-  border-color: var(--border-color);
+  color: var(--tactical-orange);
+  border-color: var(--tactical-orange);
 }
 
 .btn-secondary:hover {
   border-color: var(--tactical-orange);
   color: var(--tactical-orange);
-  background-color: rgba(255, 122, 0, 0.05);
+  background-color: rgba(255, 122, 0, 0.1);
   transform: translateY(-2px);
 }
 
 body.light-mode .btn-secondary {
-  border-color: rgba(0, 0, 0, 0.25);
+  border-color: var(--tactical-orange);
+  color: var(--tactical-orange);
 }
 .nav-right .btn {
   padding: 0 20px;
@@ -1237,7 +1238,7 @@ textarea.form-control {
     width: 100%;
 }
 .faq-item summary {
-    padding: 20px 25px;
+    padding: 20px 60px 20px 25px;
     font-size: 1rem;
     font-weight: 400;
     color: var(--text-primary);

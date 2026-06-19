@@ -95,3 +95,18 @@ html[dir="rtl"] .nav-right {
     text-align: center;
   }
 }
+
+/* FAQ RTL Adjustments */
+html[dir="rtl"] .faq-item summary {
+    padding: 20px 25px 20px 60px;
+}
+
+html[dir="rtl"] .faq-item summary::after {
+    right: auto;
+    left: 25px;
+}
+
+/* Footer Brand Alignment RTL */
+html[dir="rtl"] .main-footer .nav-left {
+    justify-content: flex-end;
+}
