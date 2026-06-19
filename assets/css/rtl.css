@@ -1,0 +1,97 @@
+/* rtl.css */
+
+/* FULL RTL SUPPORT */
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] body {
+  overflow-x: hidden;
+}
+
+/* Mirror Navigation */
+html[dir="rtl"] .nav-left {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .logo-text {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .logo-icon {
+  clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%);
+}
+
+/* Mirror Forms */
+html[dir="rtl"] input,
+html[dir="rtl"] textarea,
+html[dir="rtl"] select {
+  text-align: right;
+}
+
+/* Mirror Buttons */
+html[dir="rtl"] .btn::before {
+  left: auto;
+  right: -100%;
+  transform: skewX(15deg);
+}
+html[dir="rtl"] .btn:hover::before {
+  right: 100%;
+  left: auto;
+}
+
+/* Margin Adjustments */
+html[dir="rtl"] .ml-auto {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+html[dir="rtl"] .mr-auto {
+  margin-right: 0 !important;
+  margin-left: auto !important;
+}
+
+/* Specific component overrides */
+html[dir="rtl"] .nav-center {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .nav-right {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 1024px) {
+  html[dir="rtl"] .nav-menu {
+    right: auto;
+    left: -320px;
+    border-left: none;
+    border-right: 1px solid var(--border-color);
+    transition: left 0.4s cubic-bezier(0.77,0.2,0.05,1);
+  }
+  html[dir="rtl"] .nav-menu.active {
+    left: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  html[dir="rtl"] .nav-center {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  html[dir="rtl"] .nav-right {
+    display: grid;
+    /* Grid already handles its own layout, but we ensure it doesn't stay row-reverse */
+  }
+}
+
+@media (max-width: 768px) {
+  html[dir="rtl"] h1, 
+  html[dir="rtl"] h2, 
+  html[dir="rtl"] h3, 
+  html[dir="rtl"] p, 
+  html[dir="rtl"] .subheading, 
+  html[dir="rtl"] .lead-text {
+    text-align: center;
+  }
+}

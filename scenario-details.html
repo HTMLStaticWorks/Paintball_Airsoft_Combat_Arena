@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Escort Mission | Scenario Details</title>
+    <meta name="description" content="Mission Briefing for VIP Escort. Review objectives, team sizes, durations, and equipment requirements before deployment.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        .intel-panel {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 6px;
+        }
+        .intel-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding: 15px 0;
+        }
+        .intel-item:last-child {
+            border-bottom: none;
+        }
+        .intel-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        .intel-value {
+            color: var(--tactical-orange);
+            font-weight: 520;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo-icon"></div>
+            <a href="index.html" class="logo-text">RECOIL</a>
+        </div>
+        <div class="nav-center">
+            <div class="nav-dropdown">
+                <a href="#" class="nav-link">Home <span style="font-size: 0.6em;">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="index.html" class="dropdown-item">Home 1</a>
+                    <a href="home-2.html" class="dropdown-item">Home 2</a>
+                </div>
+            </div>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="game-scenarios.html" class="nav-link active">Scenarios</a>
+            <a href="equipment-rentals.html" class="nav-link">Equipment</a>
+            <a href="events.html" class="nav-link">Events</a>
+            <a href="gallery.html" class="nav-link">Gallery</a>
+            <a href="pricing.html" class="nav-link">Pricing</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <div class="nav-right">
+            <button id="theme-toggle" class="icon-btn" title="Toggle Light/Dark Mode">🌓</button>
+            <button id="rtl-toggle" class="icon-btn" title="Toggle RTL">⇄</button>
+            <a href="contact.html" class="btn btn-secondary">Book Your Battle</a>
+            <a href="login.html" class="btn btn-primary">Login</a>
+        </div>
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle">☰</button>
+    </nav>
+
+    <!-- Briefing Header -->
+    <header style="padding: 150px 0 80px; background-color: var(--bg-primary); border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <p class="caption" style="color: var(--tactical-orange); margin-bottom: 10px;">> MISSION FILE: 884-A</p>
+            <h1>VIP Escort Protocol</h1>
+            <p class="lead-text" style="max-width: 800px;">Protect the high-value target and extract them safely through hostile territory.</p>
+        </div>
+    </header>
+
+    <!-- Details Content -->
+    <section class="section-padding">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; gap: 50px;">
+                
+                <!-- Left: Briefing -->
+                <div style="flex: 2; min-width: 300px;">
+                    <img src="assets/images/scenario_vip_details.png" alt="VIP Escort" style="width: 100%; border-radius: 6px; margin-bottom: 30px;">
+                    
+                    <h2>Mission Briefing</h2>
+                    <p>In this high-stakes scenario, one team is designated as the protection detail. Among their ranks is an unarmed VIP (indicated by specialized high-visibility gear). The protection detail must navigate from the insertion point to the designated extraction zone, ensuring the VIP survives.</p>
+                    
+                    <h3 style="margin-top: 30px;">Primary Objectives</h3>
+                    <ul style="list-style-type: none; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--tactical-orange);">■</span> <strong>Escort Team:</strong> Move the VIP to the extraction point within the time limit. The VIP must be "alive" upon reaching the zone.</li>
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--tactical-orange);">■</span> <strong>Assault Team:</strong> Eliminate the VIP before they reach extraction.</li>
+                    </ul>
+
+                    <h3 style="margin-top: 30px;">Tactical Considerations</h3>
+                    <p>Communication is critical. The VIP cannot return fire, making them a liability that requires constant 360-degree security. The assault team can employ ambushes and choke points, forcing the escort team to rely on smoke, suppressive fire, and flanking maneuvers.</p>
+                </div>
+
+                <!-- Right: Intel Panel -->
+                <div style="flex: 1; min-width: 300px;">
+                    <div class="intel-panel" style="position: sticky; top: 120px;">
+                        <h3 style="margin-bottom: 20px;">Deployment Intel</h3>
+                        
+                        <div class="intel-item">
+                            <span class="intel-label">Recommended Team Size</span>
+                            <span class="intel-value">6 vs 6 (Min)</span>
+                        </div>
+                        <div class="intel-item">
+                            <span class="intel-label">Time Limit</span>
+                            <span class="intel-value">15 Minutes</span>
+                        </div>
+                        <div class="intel-item">
+                            <span class="intel-label">Respawn Rules</span>
+                            <span class="intel-value">No Respawns</span>
+                        </div>
+                        <div class="intel-item">
+                            <span class="intel-label">Required Equipment</span>
+                            <span class="intel-value">Standard Loadout</span>
+                        </div>
+                        <div class="intel-item">
+                            <span class="intel-label">Difficulty</span>
+                            <span class="intel-value">Advanced</span>
+                        </div>
+
+                        <div style="margin-top: 30px;">
+                            <a href="contact.html" class="btn btn-primary" style="width: 100%;">Initialize Booking</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Topology / Recon -->
+    <section class="section-padding" style="background-color: var(--bg-secondary);">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h2>Aerial Recon Data</h2>
+                    <p class="lead-text">Study the battlefield before deployment.</p>
+                    <p>Familiarize yourself with the main insertion points, elevated sniper nests, and hard cover locations. In VIP Escort, choosing the right route through the container yard is the difference between a successful extraction and a complete squad wipe.</p>
+                    <ul style="list-style-type: none; margin-top: 20px;">
+                        <li style="margin-bottom: 10px; color: var(--steel-silver);"><span style="color: var(--target-red); margin-right: 10px;">■</span> Hostile Spawn Zones</li>
+                        <li style="margin-bottom: 10px; color: var(--steel-silver);"><span style="color: var(--tactical-orange); margin-right: 10px;">■</span> Extraction Point Alpha</li>
+                        <li style="margin-bottom: 10px; color: var(--steel-silver);"><span style="color: var(--combat-bronze); margin-right: 10px;">■</span> High-Ground Vantage Points</li>
+                    </ul>
+                </div>
+                <div style="flex: 1; min-width: 300px; position: relative;">
+                    <!-- Unique Image with tactical filtering -->
+                    <img src="assets/images/arena_indoor.png" alt="Arena Map Layout" style="border-radius: 6px; border: 1px solid var(--tactical-orange); filter: sepia(0.4) hue-rotate(-15deg) contrast(1.1) brightness(0.8);">
+                    
+                    <!-- Tactical UI overlay on image -->
+                    <div style="position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.7); padding: 5px 10px; color: var(--target-red); font-family: monospace; border: 1px solid var(--target-red); font-size: 0.8rem; animation: pulseOpacity 2s infinite;">
+                        REC • 00:14:59
+                    </div>
+                    
+                    <!-- Tactical pulsing markers -->
+                    <div class="anim-marker-pulse" style="position: absolute; top: 40%; left: 30%;"></div>
+                    <div class="anim-marker-pulse" style="position: absolute; top: 60%; right: 40%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        @keyframes pulseOpacity {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+    </style>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="nav-left" style="margin-bottom: 20px;">
+                        <div class="logo-icon"></div>
+                        <span class="logo-text">RECOIL</span>
+                    </div>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.95rem;">A premium tactical combat simulation arena providing elite paintball and airsoft experiences.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                        <a href="#" title="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+                        <a href="#" title="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About HQ</a></li>
+                        <li><a href="game-scenarios.html">Combat Scenarios</a></li>
+                        <li><a href="gallery.html">Intel Archive</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Comms</a></li>
+                        <li><a href="pricing.html">Pricing Models</a></li>
+                        <li><a href="login.html">Operator Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>104 Tactical Way<br>Sector 7, Metro City 90210</li>
+                        <li>comms@combatarena.com</li>
+                        <li>1-800-COMBAT-00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Paintball & Airsoft RECOIL. All rights reserved.</p>
+                <button id="scroll-top" class="scroll-top-btn" title="Scroll to Top">&uarr;</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+

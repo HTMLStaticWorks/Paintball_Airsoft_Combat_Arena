@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon | RECOIL</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: var(--bg-primary);
+        }
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 18, 20, 0.9);
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 40px;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body class="anim-grid-bg">
+
+    <div class="overlay"></div>
+
+    <div class="content anim-hud-enter">
+        <div class="logo-icon" style="margin-bottom: 20px; width: 48px; height: 48px;"></div>
+        <h1 style="color: var(--tactical-orange);">New Sector Opening Soon</h1>
+        <p class="lead-text" style="margin-bottom: 40px;">Headquarters is currently preparing new operational zones. Check back for updates.</p>
+        
+        <form style="display: flex; gap: 10px; max-width: 400px; margin: 0 auto;">
+            <input type="email" placeholder="Enter Comms (Email)" required style="flex: 1; padding: 15px; background: rgba(0,0,0,0.5); border: 1px solid var(--border-color); color: #fff; border-radius: 4px;">
+            <button type="submit" class="btn btn-primary" style="height: auto;">Notify Me</button>
+        </form>
+        
+        <div style="margin-top: 50px;">
+            <a href="index.html" class="btn btn-secondary">Return to Base</a>
+        </div>
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paintball & Airsoft RECOIL | Premium Tactical Experience</title>
+    <meta name="description" content="Premium paintball and airsoft experiences designed for corporate teams, friends, parties, and competitive players. Book your battle today.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        /* Specific overrides for Home 1 */
+        .hero-section {
+            --bg-primary: #0F1214;
+            --text-primary: #F7F8FA;
+            --text-secondary: #B7C0C7;
+            --border-color: rgba(255, 255, 255, 0.15);
+            color: var(--text-primary);
+            height: 100vh;
+            min-height: 800px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background-color: var(--bg-primary);
+        }
+
+        /* Hero CTAs always sit on dark background, so force visible white border */
+        .hero-section .btn-secondary {
+            border: 2px solid rgba(255, 255, 255, 0.7) !important;
+            color: #F7F8FA !important;
+        }
+        .hero-section .btn-secondary:hover {
+            border-color: var(--tactical-orange) !important;
+            color: var(--tactical-orange) !important;
+        }
+        .hero-section .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        @keyframes heroBgZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('assets/images/hero_bg_1.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+            z-index: 1;
+            animation: heroBgZoom 20s ease-in-out infinite alternate;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(15,18,20,0.8) 0%, rgba(15,18,20,0.2) 50%, var(--bg-primary) 100%);
+            z-index: 2;
+        }
+
+        /* PREMIUM PAINTBALL FALL ANIMATION */
+        .paintballs-container {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            overflow: hidden;
+            z-index: 3;
+            pointer-events: none;
+        }
+        .paintball {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #ffaa00, #ff4500);
+            box-shadow: inset -2px -2px 6px rgba(0,0,0,0.5), 0 0 10px rgba(255, 69, 0, 0.4);
+            opacity: 0;
+            top: -50px;
+            animation: falldown linear infinite;
+        }
+        .paintball.blue { background: radial-gradient(circle at 30% 30%, #00d4ff, #0055ff); box-shadow: inset -2px -2px 6px rgba(0,0,0,0.5), 0 0 10px rgba(0, 85, 255, 0.4); }
+        .paintball.green { background: radial-gradient(circle at 30% 30%, #55ff00, #00aa00); box-shadow: inset -2px -2px 6px rgba(0,0,0,0.5), 0 0 10px rgba(0, 170, 0, 0.4); }
+
+        @keyframes falldown {
+            0% { transform: translateY(-50px) translateX(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            80% { opacity: 0.8; }
+            100% { transform: translateY(120vh) translateX(150px) rotate(360deg); opacity: 0; }
+        }
+
+        /* Depth of field & speed variations */
+        .pb-1 { width: 15px; height: 15px; left: 5%; animation-duration: 6s; animation-delay: 0s; filter: blur(1px); }
+        .pb-2 { width: 40px; height: 40px; left: 20%; animation-duration: 8s; animation-delay: 2s; filter: blur(4px); }
+        .pb-3 { width: 22px; height: 22px; left: 35%; animation-duration: 5s; animation-delay: 4s; filter: blur(2px); }
+        .pb-4 { width: 12px; height: 12px; left: 50%; animation-duration: 7s; animation-delay: 1s; filter: blur(0.5px); }
+        .pb-5 { width: 35px; height: 35px; left: 65%; animation-duration: 9s; animation-delay: 3s; filter: blur(3px); }
+        .pb-6 { width: 18px; height: 18px; left: 80%; animation-duration: 5.5s; animation-delay: 5s; filter: blur(1.5px); }
+        .pb-7 { width: 28px; height: 28px; left: 90%; animation-duration: 7.5s; animation-delay: 0.5s; filter: blur(2.5px); }
+        .pb-8 { width: 50px; height: 50px; left: 10%; animation-duration: 10s; animation-delay: 1.5s; filter: blur(6px); }
+
+        .hero-tactical-elements {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        @keyframes heroFadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content h1 {
+            opacity: 0;
+            animation: heroFadeInUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) 0.2s forwards;
+        }
+
+        .hero-content .lead-text {
+            opacity: 0;
+            animation: heroFadeInUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) 0.4s forwards;
+        }
+
+        .hero-content .btn-group {
+            opacity: 0;
+            animation: heroFadeInUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) 0.6s forwards;
+        }
+
+        .marker-1 { top: 20%; left: 15%; }
+        .marker-2 { top: 60%; left: 80%; }
+        .marker-3 { top: 75%; left: 25%; }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 580;
+            color: var(--tactical-orange);
+            margin-bottom: 15px;
+            opacity: 0.8;
+            font-family: var(--font-family);
+        }
+
+        .testimonials-slider {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 6px;
+            border-left: 4px solid var(--tactical-orange);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-card h5 {
+            margin-top: auto !important;
+            min-height: 3em;
+        }
+    </style>
+</head>
+<body class="anim-grid-bg">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo-icon"></div>
+            <a href="index.html" class="logo-text">RECOIL</a>
+        </div>
+        <div class="nav-center">
+            <div class="nav-dropdown">
+                <a href="#" class="nav-link active">Home <span style="font-size: 0.6em;">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="index.html" class="dropdown-item active">Home 1</a>
+                    <a href="home-2.html" class="dropdown-item">Home 2</a>
+                </div>
+            </div>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="game-scenarios.html" class="nav-link">Scenarios</a>
+            <a href="equipment-rentals.html" class="nav-link">Equipment</a>
+            <a href="events.html" class="nav-link">Events</a>
+            <a href="gallery.html" class="nav-link">Gallery</a>
+            <a href="pricing.html" class="nav-link">Pricing</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <div class="nav-right">
+            <button id="theme-toggle" class="icon-btn" title="Toggle Light/Dark Mode">🌓</button>
+            <button id="rtl-toggle" class="icon-btn" title="Toggle RTL">⇄</button>
+            <a href="contact.html" class="btn btn-secondary">Book Your Battle</a>
+            <a href="login.html" class="btn btn-primary">Login</a>
+        </div>
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle">☰</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section anim-scanlines">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        
+        <!-- Premium Paintball Animation -->
+        <div class="paintballs-container">
+            <div class="paintball pb-1"></div>
+            <div class="paintball pb-2 blue"></div>
+            <div class="paintball pb-3 green"></div>
+            <div class="paintball pb-4"></div>
+            <div class="paintball pb-5 blue"></div>
+            <div class="paintball pb-6 green"></div>
+            <div class="paintball pb-7"></div>
+            <div class="paintball pb-8 blue"></div>
+        </div>
+
+        <div class="hero-tactical-elements anim-targeting-grid">
+            <div class="anim-marker-pulse marker-1"></div>
+            <div class="anim-marker-pulse marker-2"></div>
+            <div class="anim-marker-pulse marker-3"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Where Every Match Becomes A Mission</h1>
+            <p class="lead-text">Premium paintball and airsoft experiences designed for corporate teams, friends, parties, and competitive players.</p>
+            <div class="btn-group">
+                <a href="contact.html" class="btn btn-primary">Book Your Battle</a>
+                <a href="game-scenarios.html" class="btn btn-secondary">View Scenarios</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Scenarios -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Combat Scenarios</h2>
+                <p class="subheading">Experience diverse tactical objectives</p>
+            </div>
+            <div class="bento-grid">
+                <a href="scenario-details.html" class="bento-card bento-large">
+                    <img src="assets/images/equip_bundle_1_blog.png" alt="Close Quarters Battle" class="bento-bg">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3>Close Quarters Battle</h3>
+                        <div class="bento-hover-content">
+                            <p>Intense, fast-paced indoor skirmishes designed for rapid tactical execution and team coordination.</p>
+                            <span class="btn btn-primary" style="margin-top: 20px;">Mission Briefing</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="scenario-details.html" class="bento-card">
+                    <img src="assets/images/scenario_ctf_index.png" alt="Capture The Flag" class="bento-bg">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3>Capture The Flag</h3>
+                        <div class="bento-hover-content">
+                            <p>The classic tactical mode. Secure the enemy objective and return it to your base.</p>
+                            <span class="btn btn-secondary" style="margin-top: 15px; height: 42px; font-size: 0.85rem;">Mission Briefing</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="scenario-details.html" class="bento-card">
+                    <img src="assets/images/scenario_vip_index.png" alt="VIP Escort" class="bento-bg">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <h3>VIP Escort Mission</h3>
+                        <div class="bento-hover-content">
+                            <p>Protect the high-value target and extract them safely through hostile territory.</p>
+                            <span class="btn btn-secondary" style="margin-top: 15px; height: 42px; font-size: 0.85rem;">Mission Briefing</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Corporate Team Building -->
+    <section class="section-padding" style="background-color: var(--bg-secondary);">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="assets/images/corporate_team_building.png" alt="Corporate Team Building" style="border-radius: 6px; border: 1px solid var(--border-color); width: 100%;">
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <h2>Corporate Team Building Packages</h2>
+                    <p class="lead-text">Forge unbreakable bonds on the battlefield.</p>
+                    <p>Our corporate packages are designed to enhance communication, leadership, and strategic thinking under pressure. Equip your team with premium gear and let them navigate complex tactical scenarios.</p>
+                    <ul style="list-style-type: none; margin-bottom: 30px;">
+                        <li style="margin-bottom: 10px; color: var(--steel-silver);">✓ Dedicated Event Coordinator</li>
+                        <li style="margin-bottom: 10px; color: var(--steel-silver);">✓ Private Arena Access</li>
+                        <li style="margin-bottom: 10px; color: var(--steel-silver);">✓ Catered Briefing Room</li>
+                    </ul>
+                    <a href="events.html" class="btn btn-primary">Explore Corporate Events</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipment Rental -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Elite Equipment Rentals</h2>
+                <p class="subheading">Access the armory</p>
+            </div>
+            <div class="equipment-accordion">
+                <a href="equipment-rentals.html" class="equip-panel">
+                    <img src="assets/images/bg_login.png" alt="Airsoft Loadout" class="equip-bg">
+                    <div class="equip-overlay"></div>
+                    <div class="equip-content">
+                        <h3>Airsoft Tactical Loadout</h3>
+                        <p>Premium AEG rifles, full face protection, and tactical vests for a realistic combat feel.</p>
+                        <span class="btn btn-primary">View Details</span>
+                    </div>
+                </a>
+                <a href="equipment-rentals.html" class="equip-panel">
+                    <img src="assets/images/paintball_pro_setup.png" alt="Paintball Marker Setup" class="equip-bg">
+                    <div class="equip-overlay"></div>
+                    <div class="equip-content">
+                        <h3>Paintball Pro Setup</h3>
+                        <p>High-end markers with electronic trigger frames, thermal masks, and compressed air tanks.</p>
+                        <span class="btn btn-primary">View Details</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Booking Process -->
+    <section class="section-padding" style="background-color: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Deployment Process</h2>
+                <p class="subheading">How to secure your mission</p>
+            </div>
+            <div class="premium-stepper">
+                <div class="step-item">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Select Mission</h3>
+                        <p>Choose your preferred game mode and arena type. From Close Quarters Battle to VIP Escort, select the objective that fits your squad.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Gather Squad</h3>
+                        <p>Confirm your player count and team requirements. Coordinate with your team to ensure maximum combat effectiveness.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Gear Up</h3>
+                        <p>Select your equipment packages and rentals. Equip yourself with our premium tactical loadouts and electronic markers.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Deploy</h3>
+                        <p>Arrive at the AO for briefing and deployment. Review the rules of engagement and step onto the battlefield.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>After Action Reports</h2>
+                <p class="subheading">Intel from the field</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <p>"The most intense team-building event we've ever had. The facilities are top-tier and the scenarios forced our team to communicate flawlessly."</p>
+                    <h5 style="margin-top: 20px; margin-bottom: 0;">- Sarah J., Tech Corp</h5>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Felt like stepping into a video game. The equipment was flawless and the arena layout was incredibly strategic. Will be back."</p>
+                    <h5 style="margin-top: 20px; margin-bottom: 0;">- Mike T., Competitive Player</h5>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Booked my bachelor party here and it exceeded all expectations. The VIP escort mission was unforgettable."</p>
+                    <h5 style="margin-top: 20px; margin-bottom: 0;">- David R.</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="nav-left" style="margin-bottom: 20px;">
+                        <div class="logo-icon"></div>
+                        <span class="logo-text">RECOIL</span>
+                    </div>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.95rem;">A premium tactical combat simulation arena providing elite paintball and airsoft experiences.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                        <a href="#" title="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+                        <a href="#" title="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About HQ</a></li>
+                        <li><a href="game-scenarios.html">Combat Scenarios</a></li>
+                        <li><a href="gallery.html">Intel Archive</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Comms</a></li>
+                        <li><a href="pricing.html">Pricing Models</a></li>
+                        <li><a href="login.html">Operator Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>104 Tactical Way<br>Sector 7, Metro City 90210</li>
+                        <li>comms@combatarena.com</li>
+                        <li>1-800-COMBAT-00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Paintball & Airsoft RECOIL. All rights reserved.</p>
+                <button id="scroll-top" class="scroll-top-btn" title="Scroll to Top">&uarr;</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+

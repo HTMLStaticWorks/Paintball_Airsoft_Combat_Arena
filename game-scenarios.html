@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Scenarios | Paintball & Airsoft RECOIL</title>
+    <meta name="description" content="Explore our tactical combat scenarios. From Capture the Flag and VIP Escort to Search & Destroy, find your next mission here.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo-icon"></div>
+            <a href="index.html" class="logo-text">RECOIL</a>
+        </div>
+        <div class="nav-center">
+            <div class="nav-dropdown">
+                <a href="#" class="nav-link">Home <span style="font-size: 0.6em;">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="index.html" class="dropdown-item">Home 1</a>
+                    <a href="home-2.html" class="dropdown-item">Home 2</a>
+                </div>
+            </div>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="game-scenarios.html" class="nav-link active">Scenarios</a>
+            <a href="equipment-rentals.html" class="nav-link">Equipment</a>
+            <a href="events.html" class="nav-link">Events</a>
+            <a href="gallery.html" class="nav-link">Gallery</a>
+            <a href="pricing.html" class="nav-link">Pricing</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <div class="nav-right">
+            <button id="theme-toggle" class="icon-btn" title="Toggle Light/Dark Mode">🌓</button>
+            <button id="rtl-toggle" class="icon-btn" title="Toggle RTL">⇄</button>
+            <a href="contact.html" class="btn btn-secondary">Book Your Battle</a>
+            <a href="login.html" class="btn btn-primary">Login</a>
+        </div>
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle">☰</button>
+    </nav>
+
+    <!-- Page Header -->
+    <header style="padding: 150px 0 80px; text-align: center; background-color: var(--bg-secondary);">
+        <div class="container">
+            <h1>Tactical Scenarios</h1>
+            <p class="lead-text" style="max-width: 600px; margin: 0 auto;">Choose your objective. Execute the mission.</p>
+        </div>
+    </header>
+
+    <!-- Scenarios Grid -->
+    <section class="section-padding">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                
+                <div class="tactical-card anim-hud-enter">
+                    <div class="card-image-wrap">
+                        <div class="tactical-overlay"></div>
+                        <img src="assets/images/scenario_ctf_flag.png" alt="Capture The Flag">
+                    </div>
+                    <div class="card-content">
+                        <h3>Capture The Flag</h3>
+                        <p>Infiltrate enemy territory, secure the intelligence (flag), and extract it to your base while maintaining your own defense.</p>
+                        <div class="card-footer">
+                            <a href="scenario-details.html" class="btn btn-secondary">Mission Briefing</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tactical-card anim-hud-enter" style="animation-delay: 0.1s;">
+                    <div class="card-image-wrap">
+                        <div class="tactical-overlay"></div>
+                        <img src="assets/images/scenario_vip_guard.png" alt="VIP Escort">
+                    </div>
+                    <div class="card-content">
+                        <h3>VIP Escort</h3>
+                        <p>One team must safely transport an unarmed VIP through hostile sectors to an extraction point. The opposing force must intercept.</p>
+                        <div class="card-footer">
+                            <a href="scenario-details.html" class="btn btn-secondary">Mission Briefing</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tactical-card anim-hud-enter" style="animation-delay: 0.2s;">
+                    <div class="card-image-wrap">
+                        <div class="tactical-overlay"></div>
+                        <img src="assets/images/scenario_bomb_action.png" alt="Search & Destroy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Search & Destroy</h3>
+                        <p>Offense must plant and detonate a charge at a designated site. Defense must defuse the threat or eliminate all hostiles.</p>
+                        <div class="card-footer">
+                            <a href="scenario-details.html" class="btn btn-secondary">Mission Briefing</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tactical-card anim-hud-enter" style="animation-delay: 0.3s;">
+                    <div class="card-image-wrap">
+                        <div class="tactical-overlay"></div>
+                        <img src="assets/images/combat_scenario_1_gallery.png" alt="Team Elimination">
+                    </div>
+                    <div class="card-content">
+                        <h3>Team Elimination</h3>
+                        <p>Pure tactical attrition. Eliminate the entire opposing force before the time limit expires to claim victory.</p>
+                        <div class="card-footer">
+                            <a href="scenario-details.html" class="btn btn-secondary">Mission Briefing</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tactical-card anim-hud-enter" style="animation-delay: 0.4s;">
+                    <div class="card-image-wrap">
+                        <div class="tactical-overlay"></div>
+                        <img src="assets/images/arena_indoor_blog.png" alt="Domination">
+                    </div>
+                    <div class="card-content">
+                        <h3>Domination</h3>
+                        <p>Fight for control of three strategic points across the map. Hold points to accumulate score and bleed the enemy's resources.</p>
+                        <div class="card-footer">
+                            <a href="scenario-details.html" class="btn btn-secondary">Mission Briefing</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tactical-card anim-hud-enter" style="animation-delay: 0.5s;">
+                    <div class="card-image-wrap">
+                        <div class="tactical-overlay"></div>
+                        <img src="assets/images/arena_outdoor_game_scenarios.png" alt="Hostage Rescue">
+                    </div>
+                    <div class="card-content">
+                        <h3>Hostage Rescue</h3>
+                        <p>A barricaded force holds a target. The breaching team must clear the structure, secure the target, and exfil without collateral damage.</p>
+                        <div class="card-footer">
+                            <a href="scenario-details.html" class="btn btn-secondary">Mission Briefing</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Elite Operations Header -->
+    <section class="section-padding" style="background-color: var(--bg-secondary); padding-bottom: 20px;">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 0;">
+                <h2 style="color: var(--tactical-orange);">Elite Operations</h2>
+                <p class="subheading">Advanced Tier Scenarios</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Night Ops Parallax -->
+    <section class="elite-parallax" style="background-image: url('assets/images/scenario_night_vision.png');">
+        <div class="elite-parallax-overlay"></div>
+        <div class="container elite-parallax-content">
+            <div class="glitch-text">NIGHT OPS</div>
+            <p>Pitch-black arena navigation. Rely on your tactical flashlights, thermal optics, and squad communication. Visibility is zero. Tension is maximum.</p>
+            <a href="scenario-details.html" class="btn btn-primary" style="margin-top: 30px;">Initialize Protocol</a>
+        </div>
+    </section>
+
+    <!-- Sniper Alley Asymmetric -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="elite-asymmetric">
+                <div class="elite-asym-image">
+                    <img src="assets/images/scenario_sniper_nest.png" alt="Sniper Alley">
+                    <div class="crosshair-overlay">
+                        <div class="crosshair-h"></div>
+                        <div class="crosshair-v"></div>
+                        <div class="crosshair-c"></div>
+                    </div>
+                </div>
+                <div class="elite-asym-text">
+                    <h3 style="font-size: 3rem; margin-bottom: 20px; color: var(--text-primary);">Sniper Alley</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 30px;">Long-range engagements only. You are inserted into a dense forest environment with advanced ghillie suits and high-powered precision markers. Wind, distance, and extreme patience are your weapons.</p>
+                    <a href="scenario-details.html" class="btn btn-secondary">Acquire Target</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Urban Breach Expanding -->
+    <section class="section-padding" style="background-color: var(--bg-secondary); padding-top: 0;">
+        <div class="container">
+            <div class="elite-expanding">
+                <img src="assets/images/scenario_ctf_blog.png" alt="Urban Breach" class="breach-bg">
+                <div class="breach-overlay"></div>
+                <div class="breach-content">
+                    <h3>Urban Breach</h3>
+                    <div class="breach-details">
+                        <p>Dynamic entry. Flashbangs and fast-paced room clearing. Coordinate with your stack to dominate a highly realistic urban barricade setup.</p>
+                        <a href="scenario-details.html" class="btn btn-primary">Stack Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="nav-left" style="margin-bottom: 20px;">
+                        <div class="logo-icon"></div>
+                        <span class="logo-text">RECOIL</span>
+                    </div>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.95rem;">A premium tactical combat simulation arena providing elite paintball and airsoft experiences.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                        <a href="#" title="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+                        <a href="#" title="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About HQ</a></li>
+                        <li><a href="game-scenarios.html">Combat Scenarios</a></li>
+                        <li><a href="gallery.html">Intel Archive</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Comms</a></li>
+                        <li><a href="pricing.html">Pricing Models</a></li>
+                        <li><a href="login.html">Operator Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>104 Tactical Way<br>Sector 7, Metro City 90210</li>
+                        <li>comms@combatarena.com</li>
+                        <li>1-800-COMBAT-00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Paintball & Airsoft RECOIL. All rights reserved.</p>
+                <button id="scroll-top" class="scroll-top-btn" title="Scroll to Top">&uarr;</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+

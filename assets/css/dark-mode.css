@@ -1,0 +1,13 @@
+/* dark-mode.css (Specific overrides if needed beyond variables) */
+
+/* Since the main style.css uses variables and defaults to dark mode,
+   this file is kept minimal. Additional complex overrides can be placed here. */
+
+body:not(.light-mode) .tactical-card {
+    /* Enhanced glow effects for dark mode only */
+}
+
+body:not(.light-mode) .navbar {
+    /* Slightly darker transparency */
+    background-color: rgba(15, 18, 20, 0.9);
+}

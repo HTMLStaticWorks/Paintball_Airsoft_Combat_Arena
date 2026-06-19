@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Headquarters | Paintball & Airsoft RECOIL</title>
+    <meta name="description" content="Establish communications. Book an event, ask questions, and find the location to our premium RECOIL.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        .form-group {
+            margin-bottom: 25px;
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            border-radius: 4px;
+            font-family: var(--font-family);
+            font-size: 1rem;
+            transition: border-color var(--transition-speed) ease;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--tactical-orange);
+        }
+        .contact-social-links {
+            display: flex;
+            gap: 14px;
+            margin-top: 30px;
+        }
+        .contact-social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .contact-social-links a:hover {
+            border-color: var(--tactical-orange);
+            color: var(--tactical-orange);
+            background: rgba(255,122,0,0.08);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo-icon"></div>
+            <a href="index.html" class="logo-text">RECOIL</a>
+        </div>
+        <div class="nav-center">
+            <div class="nav-dropdown">
+                <a href="#" class="nav-link">Home <span style="font-size: 0.6em;">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="index.html" class="dropdown-item">Home 1</a>
+                    <a href="home-2.html" class="dropdown-item">Home 2</a>
+                </div>
+            </div>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="game-scenarios.html" class="nav-link">Scenarios</a>
+            <a href="equipment-rentals.html" class="nav-link">Equipment</a>
+            <a href="events.html" class="nav-link">Events</a>
+            <a href="gallery.html" class="nav-link">Gallery</a>
+            <a href="pricing.html" class="nav-link">Pricing</a>
+            <a href="contact.html" class="nav-link active">Contact</a>
+        </div>
+        <div class="nav-right">
+            <button id="theme-toggle" class="icon-btn" title="Toggle Light/Dark Mode">🌓</button>
+            <button id="rtl-toggle" class="icon-btn" title="Toggle RTL">⇄</button>
+            <a href="contact.html" class="btn btn-secondary">Book Your Battle</a>
+            <a href="login.html" class="btn btn-primary">Login</a>
+        </div>
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle">☰</button>
+    </nav>
+
+    <!-- Page Header -->
+    <header style="padding: 150px 0 80px; text-align: center; background-color: var(--bg-secondary);">
+        <div class="container">
+            <h1>Establish Comms</h1>
+            <p class="lead-text" style="max-width: 600px; margin: 0 auto;">Transmit your booking requests or operational queries directly to headquarters.</p>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; gap: 60px;">
+                
+                <!-- Contact Form -->
+                <div style="flex: 2; min-width: 300px; background-color: var(--bg-card); padding: 40px; border-radius: 6px; border: 1px solid var(--border-color);">
+                    <h3 style="margin-bottom: 30px;">Send a Message</h3>
+                    <form action="#" method="POST">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="form-group">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-control" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-control" placeholder="johndoe@email.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Inquiry Type</label>
+                            <select class="form-control">
+                                <option>General Inquiry</option>
+                                <option>Private Group Booking</option>
+                                <option>Corporate Team Building</option>
+                                <option>Birthday Package</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control" rows="5" placeholder="Provide details regarding player count, preferred dates, etc." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div style="flex: 1; min-width: 300px;">
+                    <div style="margin-bottom: 40px;">
+                        <h3 style="margin-bottom: 15px; color: var(--tactical-orange); font-size: 1.1rem;">HQ Coordinates</h3>
+                        <p>104 Tactical Way<br>Industrial Sector 7<br>Metro City, 90210</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 40px;">
+                        <h3 style="margin-bottom: 15px; color: var(--tactical-orange); font-size: 1.1rem;">Direct Line</h3>
+                        <p style="font-size: 1.2rem; font-weight: 540;">1-800-COMBAT-00</p>
+                        <p>comms@combatarena.example.com</p>
+                    </div>
+
+                    <div>
+                        <h3 style="margin-bottom: 15px; color: var(--tactical-orange); font-size: 1.1rem;">Operational Hours</h3>
+                        <ul style="list-style-type: none;">
+                            <li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding: 10px 0;">
+                                <span>Mon - Wed</span>
+                                <span>Closed (Maintenance)</span>
+                            </li>
+                            <li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding: 10px 0;">
+                                <span>Thursday</span>
+                                <span>1600 - 2200 hrs</span>
+                            </li>
+                            <li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding: 10px 0;">
+                                <span>Friday</span>
+                                <span>1400 - 2300 hrs</span>
+                            </li>
+                            <li style="display: flex; justify-content: space-between; padding: 10px 0;">
+                                <span>Sat - Sun</span>
+                                <span>0900 - 2300 hrs</span>
+                            </li>
+                        </ul>
+
+                        <!-- Social Icons -->
+                        <div class="contact-social-links">
+                            <!-- Facebook -->
+                            <a href="#" title="Facebook">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            </a>
+                            <!-- Instagram -->
+                            <a href="#" title="Instagram">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <!-- Twitter/X -->
+                            <a href="#" title="Twitter">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                            </a>
+                            <!-- YouTube -->
+                            <a href="#" title="YouTube">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>
+                            </a>
+                            <!-- WhatsApp -->
+                            <a href="#" title="WhatsApp">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Map -->
+    <div style="border-top: 1px solid var(--border-color); line-height: 0; width: 100%;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105653.29815416041!2d-118.35824848378393!3d34.05316499806497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20CA!5e0!3m2!1sen!2sus!4v1655555555555!5m2!1sen!2sus" width="100%" height="450" style="border:0; " allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="nav-left" style="margin-bottom: 20px;">
+                        <div class="logo-icon"></div>
+                        <span class="logo-text">RECOIL</span>
+                    </div>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.95rem;">A premium tactical combat simulation arena providing elite paintball and airsoft experiences.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                        <a href="#" title="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+                        <a href="#" title="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About HQ</a></li>
+                        <li><a href="game-scenarios.html">Combat Scenarios</a></li>
+                        <li><a href="gallery.html">Intel Archive</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Comms</a></li>
+                        <li><a href="pricing.html">Pricing Models</a></li>
+                        <li><a href="login.html">Operator Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>104 Tactical Way<br>Sector 7, Metro City 90210</li>
+                        <li>comms@combatarena.com</li>
+                        <li>1-800-COMBAT-00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Paintball & Airsoft RECOIL. All rights reserved.</p>
+                <button id="scroll-top" class="scroll-top-btn" title="Scroll to Top">&uarr;</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+
